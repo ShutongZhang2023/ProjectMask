@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - content: 'My health has been getting worse and worse. '
+    nextStageDialogue: {fileID: 0}
+  - content: "I\u2019ve been having fevers frequently, and they never really went
+      away. "
+    nextStageDialogue: {fileID: 0}
+  - content: My body parts keep hurting.
+    nextStageDialogue: {fileID: 0}
+  - content: 'I took medicines, but medicines don''t help. '
+    nextStageDialogue: {fileID: 11400000, guid: d6faf6e0550972444afb68ced4ab992e, type: 2}
+  - content: "And now, I\u2019m coming for you and your mysterious power."
+    nextStageDialogue: {fileID: 0}
