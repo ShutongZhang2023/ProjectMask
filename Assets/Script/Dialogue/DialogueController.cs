@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using DG.Tweening;
 
 public class DialogueController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueController : MonoBehaviour
     public Button prevButton;
     public Button pressButton;
     public Button exitButton;
+    public RectTransform dialogueContainer;
 
     [Header("设置")]
     public float typingSpeed = 0.05f;
@@ -166,8 +168,6 @@ public class DialogueController : MonoBehaviour
         // 核心修改：极其简单的判定
         if (currentLine.nextStageDialogue != null)
         {
-            Debug.Log("指证成功！跳转下一阶段");
-
             // 切换数据
             currentDialogue = currentLine.nextStageDialogue;
 
@@ -178,9 +178,12 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            // 选错了：什么都不做
-            // 可以在这里加个抖动效果或者播放一个"错误"音效
-            Debug.Log("这里没有矛盾（选错了）");
+            TriggerShake();
         }
+    }
+
+    private void TriggerShake() {
+        dialogueContainer.DOComplete();
+        dialogueContainer.DOShakeAnchorPos(0.5f, new Vector2(10f, 10f), 20, 90f);
     }
 }
