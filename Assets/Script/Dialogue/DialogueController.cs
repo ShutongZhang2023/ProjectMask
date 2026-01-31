@@ -186,4 +186,9 @@ public class DialogueController : MonoBehaviour
         dialogueContainer.DOComplete();
         dialogueContainer.DOShakeAnchorPos(0.5f, new Vector2(10f, 10f), 20, 90f);
     }
+
+    public void deleteDialogue() {
+        StopAllCoroutines();
+        gameObject.SetActive(false);
+    }
 }
