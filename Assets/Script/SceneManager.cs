@@ -77,11 +77,9 @@ public class SceneManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("û����һ�� NPC �ˣ����̽���");
-            //���ﴥ�����scene�������߼�
+            GameManager.Instance.LoadNextLevel();
         }
     }
 
-    // Mask Display logic
 
 }
