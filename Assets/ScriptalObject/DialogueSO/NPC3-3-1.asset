@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC3-3-1
+  m_EditorClassIdentifier: 
+  lines:
+  - content: "Boss, I\u2019m back. Ah\u2014put your masks away. I\u2019m not here
+      for a cure."
+    nextStageDialogue: {fileID: 0}
+  - content: "I\u2019m here to invite you to join me. I am more powerful now than
+      I have ever been."
+    nextStageDialogue: {fileID: 0}
+  - content: Lies? No, no. If I tell them sugar water can heal, and they drink it
+      and truly stop feeling the pain... then that isn't a lie. That is a miracle!
+    nextStageDialogue: {fileID: 0}
+  - content: "If I call myself a God, and they believe it\u2014then a God is what
+      I am."
+    nextStageDialogue: {fileID: 0}
+  - content: Lies? No, no. If I tell them sugar water can heal, and they drink it
+      and truly stop feeling the pain... then that isn't a lie. That is a miracle!
+    nextStageDialogue: {fileID: 0}

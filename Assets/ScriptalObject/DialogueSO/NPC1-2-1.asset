@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC1-2-1
+  m_EditorClassIdentifier: 
+  lines:
+  - content: "Hello, Master~I heard you can handle some\u2026 mystical stuff here. "
+    nextStageDialogue: {fileID: 0}
+  - content: "I don\u2019t really understand it\u2026dream interpretation or something
+      like that? "
+    nextStageDialogue: {fileID: 11400000, guid: 85c0ed9525971ff4989b9b6a0d372ef5, type: 2}

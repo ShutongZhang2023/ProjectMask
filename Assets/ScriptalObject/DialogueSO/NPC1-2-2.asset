@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC1-2-2
+  m_EditorClassIdentifier: 
+  lines:
+  - content: "I\u2019ve been feeling restless lately. "
+    nextStageDialogue: {fileID: 0}
+  - content: "I keep dreaming about all kinds of random things, and it\u2019s really
+      been messing with my mood."
+    nextStageDialogue: {fileID: 0}
+  - content: Can you help dealing with it~
+    nextStageDialogue: {fileID: 11400000, guid: d5a364f431b78ff4cbeda36765492d2b, type: 2}

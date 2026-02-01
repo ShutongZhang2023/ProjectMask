@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC3-1-1
+  m_EditorClassIdentifier: 
+  lines:
+  - content: A month ago, I uploaded a video online about an antique market, exposing
+      a stall for selling fakes.
+    nextStageDialogue: {fileID: 0}
+  - content: I didn't fake the evidence. The stuff really was fake!
+    nextStageDialogue: {fileID: 0}
+  - content: "The video went viral. Her face, her stall, her name\u2014all exposed
+      to the entire world."
+    nextStageDialogue: {fileID: 0}
+  - content: "Everyone who\u2019d ever bought from her went after her. They cursed
+      her; they trashed her shop."
+    nextStageDialogue: {fileID: 0}
+  - content: "Then\u2026 she killed herself."
+    nextStageDialogue: {fileID: 0}
+  - content: "If I hadn\u2019t dragged her into the spotlight for everyone to tear
+      apart, it never would have come to this."
+    nextStageDialogue: {fileID: 0}
