@@ -4,20 +4,20 @@ using System.Collections;
 
 public class GetOff : MonoBehaviour
 {
-    [Header("×é¼þÉèÖÃ")]
-    [Tooltip("ÉÈ×ÓÎïÌåÉÏµÄ Animator ×é¼þ")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")]
+    [Tooltip("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ Animator ï¿½ï¿½ï¿½")]
     public Animator fanAnimator;
-    [Tooltip("Animator ÀïÉèÖÃµÄ Trigger ²ÎÊýÃû×Ö£¬±ÈÈç 'Wave'")]
+    [Tooltip("Animator ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ Trigger ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ 'Wave'")]
     public string animTriggerName = "Wave";
-    [Tooltip("ÉÈ×Ó¶¯»­´ó¸Å¶à³¤£¿(Ãë) - ³ÌÐò»áµÈÕâÃ´¾ÃÔÙ³ö×Ö")]
+    [Tooltip("ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½Å¶à³¤ï¿½ï¿½(ï¿½ï¿½) - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½Ù³ï¿½ï¿½ï¿½")]
     public float fanAnimDuration = 1.0f;
 
-    [Header("ÊÓ¾õÌØÐ§")]
-    [Tooltip("ÄÇ¸ö'¹ö'×ÖµÄ SpriteRenderer")]
+    [Header("ï¿½Ó¾ï¿½ï¿½ï¿½Ð§")]
+    [Tooltip("ï¿½Ç¸ï¿½'ï¿½ï¿½'ï¿½Öµï¿½ SpriteRenderer")]
     public SpriteRenderer gunWordSprite;
-    [Tooltip("×Ö·ÉÏòÆÁÄ»ÐèÒª¶à¾Ã")]
+    [Tooltip("ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½Òªï¿½ï¿½ï¿½")]
     public float wordZoomDuration = 0.5f;
-    [Tooltip("×Ö×îÖÕ·Å´óµÄ±¶Êý")]
+    [Tooltip("ï¿½ï¿½ï¿½ï¿½ï¿½Õ·Å´ï¿½Ä±ï¿½ï¿½ï¿½")]
     public float maxScale = 50f;
     private bool isAnimating = false;
 
@@ -30,6 +30,8 @@ public class GetOff : MonoBehaviour
     {
         if (isAnimating) return;
         if (!SceneManager.instance.curtainController.IsOpen) return;
+
+        GameManager.Instance.RefuseToGive(GameManager.Instance.currentTargetNPC);
 
         StartCoroutine(PlaySequenceRoutine());
     }
@@ -45,17 +47,17 @@ public class GetOff : MonoBehaviour
         gunWordSprite.transform.localScale = Vector3.one;
         Color c = gunWordSprite.color; c.a = 0f; gunWordSprite.color = c;
 
-        // ´´½¨¶¯»­ÐòÁÐ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Sequence seq = DOTween.Sequence();
         seq.Append(gunWordSprite.DOFade(1f, 0.1f));
         seq.Join(gunWordSprite.transform.DOScale(maxScale, wordZoomDuration).SetEase(Ease.InExpo));
         seq.Insert(wordZoomDuration - 0.2f, gunWordSprite.DOFade(0f, 0.2f));
         yield return seq.WaitForCompletion();
 
-        // ÉÆºó
+        // ï¿½Æºï¿½
         gunWordSprite.gameObject.SetActive(false);
 
-        //¸ÏÈË
+        //ï¿½ï¿½ï¿½ï¿½
         SceneManager.instance.DismissCurrentNPC();
 
         isAnimating = false;

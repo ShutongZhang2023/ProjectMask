@@ -5,21 +5,23 @@ using static UnityEngine.Mesh;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public string currentTargetNPC;
+    public string currentRequiredMask;
 
-    [Header("ÓÎÏ·×´Ì¬")]
+    [Header("ï¿½ï¿½Ï·×´Ì¬")]
     public int currentDay = 1;
 
-    [Header("Ãæ¾ß¿â´æ")]
-    // ÔÚ Inspector Àï°Ñ5¸öÃæ¾ß¶¼ÅäºÃ£¬Ç°3¸ö¹´Ñ¡ isUnlocked£¬ºó2¸ö²»¹´
+    [Header("ï¿½ï¿½ß¿ï¿½ï¿½")]
+    // ï¿½ï¿½ Inspector ï¿½ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½Ã£ï¿½Ç°3ï¿½ï¿½ï¿½ï¿½Ñ¡ isUnlockedï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public List<MaskData> allMasks = new List<MaskData>();
 
-    [Header("¾çÇé·ÖÖ§¼ÇÂ¼")]
-    // Key: "Day_NPCID" (ÀýÈç "Day1_Beggar"), Value: ½á¹û (Success, Fail, Ignored)
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½Â¼")]
+    // Key: "Day_NPCID" (ï¿½ï¿½ï¿½ï¿½ "Day1_Beggar"), Value: ï¿½ï¿½ï¿½ (Success, Fail, Ignored)
     public Dictionary<string, string> storyDecisions = new Dictionary<string, string>();
 
     void Awake()
     {
-        // µ¥ÀýÄ£Ê½ + ¿ç³¡¾°²»Ïú»Ù
+        // ï¿½ï¿½ï¿½ï¿½Ä£Ê½ + ï¿½ç³¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (Instance == null)
         {
             Instance = this;
@@ -31,53 +33,56 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Íæ¼ÒÌá½»Ãæ¾ß
-    // maskIndex: Íæ¼ÒÑ¡ÁËµÚ¼¸¸öÃæ¾ß
-    // requiredMaskID: NPC ÏëÒªµÄÃæ¾ß ID
-    // npcID: µ±Ç° NPC µÄ ID£¬ÓÃÓÚ¼ÇÂ¼¾çÇé
-    public void SubmitMask(int maskIndex, string requiredMaskID, string npcID)
+    // ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½
+    // maskIndex: ï¿½ï¿½ï¿½Ñ¡ï¿½ËµÚ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    // requiredMaskID: NPC ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ ID
+    // npcID: ï¿½ï¿½Ç° NPC ï¿½ï¿½ IDï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+    public void SubmitMask(string selectedMaskID, string requiredMaskID, string npcID)
     {
-        MaskData selectedMask = allMasks[maskIndex];
+        MaskData selectedMask = allMasks.Find(m => m.maskID == selectedMaskID);
 
-        // 1. ¼ì²éÃæ¾ßÊÇ·ñ¿ÉÓÃ
+        if (selectedMask == null) return;
+
+        // 1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
         if (selectedMask.IsBroken)
         {
-            Debug.Log("Õâ¸öÃæ¾ßÒÑ¾­»µÁË£¬ÎÞ·¨Ê¹ÓÃ£¡");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½Þ·ï¿½Ê¹ï¿½Ã£ï¿½");
             return;
         }
 
-        // 2. ÅÐ¶Ï¶Ô´í
-        bool isCorrect = (selectedMask.maskID == requiredMaskID);
+        // 2. ï¿½Ð¶Ï¶Ô´ï¿½
+        bool isCorrect = (selectedMaskID == requiredMaskID);
+        Debug.Log(isCorrect);
 
-        // 3. ¸üÐÂÃæ¾ßÊýÖµ
+        // 3. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
         selectedMask.Use(isCorrect);
 
-        // 4. ¼ÇÂ¼½á¹û & ´¦Àí¾çÇé
+        // 4. ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ & ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         string resultKey = $"Day{currentDay}_{npcID}";
         string resultValue = isCorrect ? "Success" : "WrongMask";
 
         if (storyDecisions.ContainsKey(resultKey)) storyDecisions[resultKey] = resultValue;
         else storyDecisions.Add(resultKey, resultValue);
 
-        Debug.Log($"Ê¹ÓÃÁËÃæ¾ß: {selectedMask.maskID}, ½á¹û: {resultValue}, Ê£ÓàÑªÁ¿: {selectedMask.health}, ¼¢¶ö: {selectedMask.hunger}");
+        Debug.Log($"Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {selectedMask.maskID}, ï¿½ï¿½ï¿½: {resultValue}, Ê£ï¿½ï¿½Ñªï¿½ï¿½: {selectedMask.health}, ï¿½ï¿½ï¿½ï¿½: {selectedMask.hunger}");
 
-        // ÕâÀï¿ÉÒÔÍ¨Öª UI ¸üÐÂ£¬»òÕßÍ¨Öª DialogueSystem ²¥·Å¶ÔÓ¦·ÖÖ§
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨Öª UI ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½Í¨Öª DialogueSystem ï¿½ï¿½ï¿½Å¶ï¿½Ó¦ï¿½ï¿½Ö§
     }
 
-    // Íæ¼ÒÑ¡Ôñ¡°²»¸øÃæ¾ß¡±
+    // ï¿½ï¿½ï¿½Ñ¡ï¿½ñ¡°²ï¿½ï¿½ï¿½ï¿½ï¿½ß¡ï¿½
     public void RefuseToGive(string npcID)
     {
         string resultKey = $"Day{currentDay}_{npcID}";
         storyDecisions[resultKey] = "Refused";
-        Debug.Log("Íæ¼ÒÃ»ÓÐÑ¡ÔñÃæ¾ß");
+        Debug.Log("fuuuuuuck off");
     }
 
-    // --- Á÷³Ì¿ØÖÆ ---
+    // --- ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½ ---
 
-    // ½áÊøÕâÒ»Ìì£¨Í¨³£ÔÚË¯¾õ»òÇÐ³¡¾°Ê±µ÷ÓÃ£©
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ì£¨Í¨ï¿½ï¿½ï¿½ï¿½Ë¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã£ï¿½
     public void EndDay()
     {
-        // ½áËãËùÓÐÃæ¾ßµÄ Hunger
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ Hunger
         foreach (var mask in allMasks)
         {
             if (mask.isUnlocked)
@@ -87,15 +92,15 @@ public class GameManager : MonoBehaviour
         }
 
         currentDay++;
-        CheckNewMaskUnlocks(); // ¼ì²éÊÇ·ñÓÐÐÂÃæ¾ßÔÚÃ÷Ìì½âËø
+        CheckNewMaskUnlocks(); // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-        Debug.Log($"½øÈëµÚ {currentDay} Ìì£¬Ãæ¾ß×´Ì¬ÒÑ¸üÐÂ¡£");
+        Debug.Log($"ï¿½ï¿½ï¿½ï¿½ï¿½ {currentDay} ï¿½ì£¬ï¿½ï¿½ï¿½×´Ì¬ï¿½Ñ¸ï¿½ï¿½Â¡ï¿½");
     }
 
-    // ¸ù¾ÝÌìÊý½âËøÐÂÃæ¾ß
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     void CheckNewMaskUnlocks()
     {
-        // Ê¾Àý£ºµÚ2Ìì½âËøµÚ4¸öÃæ¾ß
+        // Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½
         if (currentDay == 2) UnlockMask("Xiongbo");
         if (currentDay == 3) UnlockMask("Lanzhu");
     }
