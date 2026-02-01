@@ -135,6 +135,5 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    // Mask Display logic
 
 }

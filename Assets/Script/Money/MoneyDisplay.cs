@@ -3,13 +3,7 @@ using TMPro; // 确保引用了命名空间
 
 public class MoneyDisplay : MonoBehaviour
 {
-    private TextMeshPro moneyText; // 注意：这里去掉了 'UGUI'
-
-    void Awake()
-    {
-        // 获取场景物体上的 TextMeshPro 组件
-        moneyText = GetComponent<TextMeshPro>();
-    }
+    [SerializeField] private TextMeshProUGUI moneyText; // 注意：这里去掉了 'UGUI'
 
     void OnEnable()
     {
@@ -36,7 +30,7 @@ public class MoneyDisplay : MonoBehaviour
     {
         if (moneyText != null)
         {
-            moneyText.text = $"￥ {amount}";
+            moneyText.text = $"{amount}";
         }
     }
 }
