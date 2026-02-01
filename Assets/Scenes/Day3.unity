@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 3.3.2
   requiredMaskID: Qiuwei
+  moneyPaid: -250
 --- !u!114 &110654679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 3.1
   requiredMaskID: Lanzhu
+  moneyPaid: 100
 --- !u!114 &626506094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,6 +1459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 3.3.1
   requiredMaskID: Boqi
+  moneyPaid: 0
 --- !u!114 &1056700694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2562,6 +2565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 3.2
   requiredMaskID: Xiongbo
+  moneyPaid: 100
 --- !u!114 &1476507367
 MonoBehaviour:
   m_ObjectHideFlags: 0

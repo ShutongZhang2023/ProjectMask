@@ -639,6 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 2.1
   requiredMaskID: Xiongbo
+  moneyPaid: 100
 --- !u!114 &626506094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,7 @@ GameObject:
   - component: {fileID: 1056700695}
   - component: {fileID: 1056700694}
   - component: {fileID: 1056700693}
+  - component: {fileID: 1056700696}
   m_Layer: 0
   m_Name: NPCFollowup
   m_TagString: Untagged
@@ -1173,6 +1175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 2.3
   requiredMaskID: Jiazuo
+  moneyPaid: 0
 --- !u!114 &1056700694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1208,19 @@ Transform:
   - {fileID: 1195289259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1056700696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056700692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a7cd522eb0b4d5faccda3c34bf4ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penaltyAmount: 50
 --- !u!1 &1064757103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 2.2
   requiredMaskID: Qiuwei
+  moneyPaid: 100
 --- !u!114 &1476507367
 MonoBehaviour:
   m_ObjectHideFlags: 0

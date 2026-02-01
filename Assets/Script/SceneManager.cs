@@ -23,11 +23,6 @@ public class SceneManager : MonoBehaviour
 
     void InitializeGame()
     {
-        // 只在 Day 2 执行特殊逻辑 - 桌面清理大师
-        if (GameManager.Instance != null && GameManager.Instance.currentDay == 3)
-        {
-            AdjustDay2NpcList();
-        }        
         // 只在 Day 3 执行特殊逻辑 - 医生的悔改
         if (GameManager.Instance != null && GameManager.Instance.currentDay == 3)
         {
@@ -43,16 +38,11 @@ public class SceneManager : MonoBehaviour
         npcList[0].SetActive(true);
         npcList[0].GetComponent<NPCIdentity>().SendInfoToManager();
     }
-
-    void AdjustDay2NpcList()
-    {
-        string checkKey = "Day1_1.2"; 
-        string result = "";        
-    }
+    
 
     void AdjustDay3NpcList()
     {
-        string checkKey = "Day2_2.2"; 
+        string checkKey = "Day2_2.2";
         string result = "";
 
         // 从 GameManager 的字典里获取结果
@@ -130,7 +120,7 @@ public class SceneManager : MonoBehaviour
             // 通知 GameManager 结束这一天
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.EndDay(); 
+                GameManager.Instance.EndDay();
             }
         }
     }
