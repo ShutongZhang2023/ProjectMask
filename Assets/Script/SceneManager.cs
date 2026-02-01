@@ -30,14 +30,15 @@ public class SceneManager : MonoBehaviour
         currentIndex = 0;
 
         npcList[0].SetActive(true);
+        npcList[0].GetComponent<NPCIdentity>().SendInfoToManager();
     }
 
-    // ¸Ï×ßµ±Ç° NPC
+    // ï¿½ï¿½ï¿½ßµï¿½Ç° NPC
     public void DismissCurrentNPC()
     {
         if (curtainController == null || !curtainController.IsOpen)
         {
-            Debug.Log("Á±×Ó»¹Ã»À­¿ª£¬²»ÄÜ¸ÏÈË¡£");
+            Debug.Log("ï¿½ï¿½ï¿½Ó»ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¸ï¿½ï¿½Ë¡ï¿½");
             return;
         }
 
@@ -61,22 +62,26 @@ public class SceneManager : MonoBehaviour
         curtainController.CloseCurtains();
         yield return new WaitForSeconds(curtainController.duration + 0.1f);
 
-        // oldNPC ³¹µ×Ïú»Ù
+        // oldNPC ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (oldNPC != null)
         {
             Destroy(oldNPC);
         }
 
-        // Ë÷ÒýÖ¸ÏòÏÂÒ»Î»
+        // ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ò»Î»
         currentIndex++;
         if (currentIndex < npcList.Count && npcList[currentIndex] != null)
         {
             npcList[currentIndex].SetActive(true);
+            npcList[currentIndex].GetComponent<NPCIdentity>().SendInfoToManager();
         }
         else
         {
-            Debug.Log("Ã»ÓÐÏÂÒ»¸ö NPC ÁË£¬Á÷³Ì½áÊø");
-            //ÕâÀï´¥·¢Õâ¸öscene½áÊøµÄÂß¼­
+            Debug.Log("Ã»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ NPC ï¿½Ë£ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½");
+            //ï¿½ï¿½ï¿½ï´¥ï¿½ï¿½ï¿½ï¿½ï¿½sceneï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½
         }
     }
+
+    // Mask Display logic
+
 }
