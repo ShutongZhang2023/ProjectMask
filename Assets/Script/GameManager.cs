@@ -95,9 +95,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("fuuuuuuck off");
     }
 
-    // --- ���̿��� ---
 
-    // ������һ�죨ͨ����˯�����г���ʱ���ã�
     public void EndDay()
     {
         // ����������ߵ� Hunger
@@ -110,7 +108,7 @@ public class GameManager : MonoBehaviour
         }
 
         currentDay++;
-        CheckNewMaskUnlocks(); // ����Ƿ�����������������
+        CheckNewMaskUnlocks();
 
         Debug.Log($"end the day");
 
