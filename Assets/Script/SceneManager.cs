@@ -23,6 +23,17 @@ public class SceneManager : MonoBehaviour
 
     void InitializeGame()
     {
+        // 只在 Day 2 执行特殊逻辑 - 桌面清理大师
+        if (GameManager.Instance != null && GameManager.Instance.currentDay == 3)
+        {
+            AdjustDay2NpcList();
+        }        
+        // 只在 Day 3 执行特殊逻辑 - 医生的悔改
+        if (GameManager.Instance != null && GameManager.Instance.currentDay == 3)
+        {
+            AdjustDay3NpcList();
+        }
+
         foreach (var npc in npcList)
         {
             if (npc != null) npc.SetActive(false);
@@ -31,6 +42,43 @@ public class SceneManager : MonoBehaviour
 
         npcList[0].SetActive(true);
         npcList[0].GetComponent<NPCIdentity>().SendInfoToManager();
+    }
+
+    void AdjustDay2NpcList()
+    {
+        string checkKey = "Day1_1.2"; 
+        string result = "";        
+    }
+
+    void AdjustDay3NpcList()
+    {
+        string checkKey = "Day2_2.2"; 
+        string result = "";
+
+        // 从 GameManager 的字典里获取结果
+        if (GameManager.Instance.storyDecisions.TryGetValue(checkKey, out result))
+        {
+            if (result == "Success")
+            {
+                // 如果成功，保留 NPC3-2，移除 3-1 展示xiaoya
+                RemoveNpcFromList("NPC3-1");
+            }
+            else
+            {
+                // 如果失败或拒绝，移除 NPC3-2，展示 邪教头
+                RemoveNpcFromList("NPC3-2");
+            }
+        }
+    }
+
+    void RemoveNpcFromList(string npcName)
+    {
+        GameObject toRemove = npcList.Find(n => n.name == npcName);
+        if (toRemove != null)
+        {
+            npcList.Remove(toRemove);
+            toRemove.SetActive(false); // 确保它不会出现在场景中
+        }
     }
 
     // ���ߵ�ǰ NPC
@@ -75,10 +123,15 @@ public class SceneManager : MonoBehaviour
             npcList[currentIndex].SetActive(true);
             npcList[currentIndex].GetComponent<NPCIdentity>().SendInfoToManager();
         }
+        // 在 SceneManager.cs 的 SwitchNPCRoutine 协程末尾
         else
         {
-            Debug.Log("û����һ�� NPC �ˣ����̽���");
-            //���ﴥ�����scene�������߼�
+            Debug.Log("没有下一个 NPC 了，准备结束这一天");
+            // 通知 GameManager 结束这一天
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.EndDay(); 
+            }
         }
     }
 
