@@ -664,7 +664,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289307294}
-  - component: {fileID: 289307295}
   m_Layer: 0
   m_Name: Boqi
   m_TagString: Untagged
@@ -690,23 +689,6 @@ Transform:
   - {fileID: 478265519}
   m_Father: {fileID: 1529932338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &289307295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289307293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairButtonObject: {fileID: 1873833473}
-  costText: {fileID: 1841720240}
-  costHealthMinor: 250
-  costHealthMajor: 500
-  costHungerFeed: 500
 --- !u!1 &291457427
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +744,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315447825}
-  - component: {fileID: 315447826}
   m_Layer: 0
   m_Name: Qiuwei
   m_TagString: Untagged
@@ -788,23 +769,6 @@ Transform:
   - {fileID: 445811547}
   m_Father: {fileID: 1529932338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &315447826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315447824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairButtonObject: {fileID: 1137769952}
-  costText: {fileID: 474149253}
-  costHealthMinor: 250
-  costHealthMajor: 500
-  costHungerFeed: 500
 --- !u!1 &333104843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1411,7 @@ GameObject:
   - component: {fileID: 449336664}
   - component: {fileID: 449336665}
   - component: {fileID: 449336666}
+  - component: {fileID: 449336667}
   m_Layer: 0
   m_Name: BoqiVisual
   m_TagString: Untagged
@@ -1624,6 +1589,23 @@ MonoBehaviour:
   rightEyeSR: {fileID: 1750693029}
   leftEyeLight: {fileID: 1771198269}
   rightEyeLight: {fileID: 1750693028}
+--- !u!114 &449336667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449336660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairButtonObject: {fileID: 1873833473}
+  costText: {fileID: 1841720240}
+  costHealthMinor: 250
+  costHealthMajor: 500
+  costHungerFeed: 500
 --- !u!1 &462985913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,7 +2122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.76, y: 264.6}
+  m_AnchoredPosition: {x: 644.7, y: 264.6}
   m_SizeDelta: {x: 110.03, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527484184
@@ -2239,6 +2221,7 @@ GameObject:
   - component: {fileID: 616779043}
   - component: {fileID: 616779044}
   - component: {fileID: 616779045}
+  - component: {fileID: 616779046}
   m_Layer: 0
   m_Name: QiuweiVisual
   m_TagString: Untagged
@@ -2416,6 +2399,23 @@ MonoBehaviour:
   rightEyeSR: {fileID: 333104846}
   leftEyeLight: {fileID: 85751191}
   rightEyeLight: {fileID: 333104845}
+--- !u!114 &616779046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616779039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairButtonObject: {fileID: 1137769952}
+  costText: {fileID: 474149253}
+  costHealthMinor: 250
+  costHealthMajor: 500
+  costHungerFeed: 500
 --- !u!1 &653723182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,6 +2554,7 @@ GameObject:
   - component: {fileID: 770969823}
   - component: {fileID: 770969824}
   - component: {fileID: 770969825}
+  - component: {fileID: 770969826}
   m_Layer: 0
   m_Name: JiazuoVisual
   m_TagString: Untagged
@@ -2731,6 +2732,23 @@ MonoBehaviour:
   rightEyeSR: {fileID: 1993721892}
   leftEyeLight: {fileID: 344764509}
   rightEyeLight: {fileID: 1993721891}
+--- !u!114 &770969826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770969819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairButtonObject: {fileID: 1491137159}
+  costText: {fileID: 1403375515}
+  costHealthMinor: 250
+  costHealthMajor: 500
+  costHungerFeed: 500
 --- !u!1 &853699229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,6 +2850,7 @@ GameObject:
   - component: {fileID: 869309310}
   - component: {fileID: 869309311}
   - component: {fileID: 869309312}
+  - component: {fileID: 869309313}
   m_Layer: 0
   m_Name: XiongboVisual
   m_TagString: Untagged
@@ -3009,6 +3028,23 @@ MonoBehaviour:
   rightEyeSR: {fileID: 1922156314}
   leftEyeLight: {fileID: 1340720232}
   rightEyeLight: {fileID: 1922156313}
+--- !u!114 &869309313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869309306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairButtonObject: {fileID: 1341312293}
+  costText: {fileID: 462985915}
+  costHealthMinor: 250
+  costHealthMajor: 500
+  costHungerFeed: 500
 --- !u!1 &910040850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3453,7 +3489,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1139606469}
-  - component: {fileID: 1139606470}
   m_Layer: 0
   m_Name: Lanzhu
   m_TagString: Untagged
@@ -3479,23 +3514,6 @@ Transform:
   - {fileID: 1660230085}
   m_Father: {fileID: 1529932338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1139606470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139606468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairButtonObject: {fileID: 527484182}
-  costText: {fileID: 103432839}
-  costHealthMinor: 250
-  costHealthMajor: 500
-  costHungerFeed: 500
 --- !u!1 &1340720230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,7 +3690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.76, y: 264.6}
+  m_AnchoredPosition: {x: -666.2, y: 264.6}
   m_SizeDelta: {x: 110.03, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341312295
@@ -3771,6 +3789,7 @@ GameObject:
   - component: {fileID: 1357184609}
   - component: {fileID: 1357184610}
   - component: {fileID: 1357184611}
+  - component: {fileID: 1357184612}
   m_Layer: 0
   m_Name: LanzhuVisual
   m_TagString: Untagged
@@ -3948,6 +3967,23 @@ MonoBehaviour:
   rightEyeSR: {fileID: 1065406653}
   leftEyeLight: {fileID: 1737532783}
   rightEyeLight: {fileID: 1065406652}
+--- !u!114 &1357184612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357184605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairButtonObject: {fileID: 527484182}
+  costText: {fileID: 103432839}
+  costHealthMinor: 250
+  costHealthMajor: 500
+  costHungerFeed: 500
 --- !u!1 &1403375513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.76, y: 264.6}
+  m_AnchoredPosition: {x: 309.4, y: 264.6}
   m_SizeDelta: {x: 110.03, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491137161
@@ -4464,7 +4500,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1637599977}
-  - component: {fileID: 1637599978}
   m_Layer: 0
   m_Name: Jiazuo
   m_TagString: Untagged
@@ -4490,23 +4525,6 @@ Transform:
   - {fileID: 471546759}
   m_Father: {fileID: 1529932338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1637599978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637599976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairButtonObject: {fileID: 1491137159}
-  costText: {fileID: 1403375515}
-  costHealthMinor: 250
-  costHealthMajor: 500
-  costHungerFeed: 500
 --- !u!1 &1660230084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,7 +4636,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1715588427}
-  - component: {fileID: 1715588428}
   m_Layer: 0
   m_Name: Xiongbo
   m_TagString: Untagged
@@ -4644,23 +4661,6 @@ Transform:
   - {fileID: 1446242745}
   m_Father: {fileID: 1529932338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1715588428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715588426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383d0add45af40940944f5829a6c20b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairButtonObject: {fileID: 1341312293}
-  costText: {fileID: 462985915}
-  costHealthMinor: 250
-  costHealthMajor: 500
-  costHungerFeed: 500
 --- !u!1 &1737532781
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,7 +5407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.76, y: 264.6}
+  m_AnchoredPosition: {x: -346.93, y: 264.6}
   m_SizeDelta: {x: 110.03, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873833475
