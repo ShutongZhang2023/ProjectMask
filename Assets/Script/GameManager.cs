@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Mesh;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     public float fadeDuration = 0.5f;
     public List<string> sceneNames = new List<string>();
     private string currentLoadedSceneName;
+
+    public event Action OnDayDataUpdated;
 
     void Awake()
     {
@@ -80,9 +83,8 @@ public class GameManager : MonoBehaviour
 
         CurrencyManager.Instance.AddMoney(moneyEarned);
 
-        Debug.Log($"ʹ�������: {selectedMask.maskID}, ���: {resultValue}, ʣ��Ѫ��: {selectedMask.health}, ����: {selectedMask.hunger}");
+        Debug.Log($"ʹNPCID: {resultKey}, Select MaskID: {selectedMask.maskID},resultValue: {resultValue}");
 
-        // �������֪ͨ UI ���£�����֪ͨ DialogueSystem ���Ŷ�Ӧ��֧
     }
 
     // ���ѡ�񡰲�����ߡ�
@@ -93,9 +95,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("fuuuuuuck off");
     }
 
-    // --- ���̿��� ---
 
-    // ������һ�죨ͨ����˯�����г���ʱ���ã�
     public void EndDay()
     {
         // ����������ߵ� Hunger
@@ -108,9 +108,11 @@ public class GameManager : MonoBehaviour
         }
 
         currentDay++;
-        CheckNewMaskUnlocks(); // ����Ƿ�����������������
+        CheckNewMaskUnlocks();
 
-        Debug.Log($"����� {currentDay} �죬���״̬�Ѹ��¡�");
+        Debug.Log($"end the day");
+
+        OnDayDataUpdated?.Invoke();
     }
 
     // �����������������

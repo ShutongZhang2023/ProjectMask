@@ -38,7 +38,7 @@ public class SceneManager : MonoBehaviour
     {
         if (curtainController == null || !curtainController.IsOpen)
         {
-            Debug.Log("���ӻ�û���������ܸ��ˡ�");
+            Debug.Log("no npc");
             return;
         }
 
@@ -77,6 +77,7 @@ public class SceneManager : MonoBehaviour
         }
         else
         {
+            yield return new WaitForSeconds(2.0f);
             GameManager.Instance.LoadNextLevel();
         }
     }
