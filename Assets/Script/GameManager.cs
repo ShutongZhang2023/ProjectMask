@@ -52,7 +52,30 @@ public class GameManager : MonoBehaviour
 
         // 2. �ж϶Դ�
         bool isCorrect = (selectedMaskID == requiredMaskID);
-        Debug.Log(isCorrect);
+
+        CurrencyManager.Instance.AddMoney(100); 
+        Debug.Log("100 money added");
+
+
+        // ALL HARDCODED FOR MONEY SYSTEM
+        // 注意：苏晴的分支 2 是在第二天扣钱，我们看情况 B
+        // 检查昨天的结果
+        string suQingResult = "";
+        storyDecisions.TryGetValue($"Day{currentDay}_SuQing", out suQingResult);
+
+        if (suQingResult == "Success")
+        {
+            CurrencyManager.Instance.SpendMoney(50); // 桌面清理大师 -200
+            Debug.Log("苏晴不爽，砸了你的店！-200");
+        }
+
+        // 处理xiaoya的感谢信
+        string xiaoyaResult = "";
+        storyDecisions.TryGetValue($"Day{currentDay}_Xiaoya", out xiaoyaResult);
+        if (xiaoyaResult == "Success")
+        {
+            CurrencyManager.Instance.SpendMoney(50); //
+        }    
 
         // 3. ���������ֵ
         selectedMask.Use(isCorrect);
