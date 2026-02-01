@@ -700,6 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 1.2
   requiredMaskID: Jiazuo
+  moneyPaid: 100
 --- !u!114 &564783694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 1.2
   requiredMaskID: Boqi
+  moneyPaid: -50
 --- !u!114 &707793233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcID: 1.1
   requiredMaskID: Qiuwei
+  moneyPaid: 100
 --- !u!1 &1139606468
 GameObject:
   m_ObjectHideFlags: 0
