@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC3-3-2
+  m_EditorClassIdentifier: 
+  lines:
+  - content: (Coughing violently) ...This is all your fault. I felt like I was finally
+      getting better. I even had plans to go traveling with my friends...
+    nextStageDialogue: {fileID: 0}
+  - content: Why did you have to tell me? Why did you have to expose the truth?!
+    nextStageDialogue: {fileID: 0}

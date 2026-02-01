@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC3-2
+  m_EditorClassIdentifier: 
+  lines:
+  - content: "Master, I\u2019ve been having these nightmares lately. I can\u2019t
+      get a wink of sleep. Could you take a look at me?"
+    nextStageDialogue: {fileID: 0}
+  - content: "I\u2019ve tried to pinpoint the cause."
+    nextStageDialogue: {fileID: 0}
+  - content: It's probably the shock from that colleague of mine who dropped dead.
+    nextStageDialogue: {fileID: 11400000, guid: 9fdce63ded83a934f8f23c09e3087557, type: 2}
