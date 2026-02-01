@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Persist.unity
-    guid: 0da2778c80fa11c4eb2fc139eb0212dd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Day1.unity
     guid: 5ba988635e49bb347ac7cf22b9a32136
-  - enabled: 1
-    path: Assets/Scenes/TestSceneDay2.unity
-    guid: 8208bafe4da94fe459c1d111761904d6
+  - enabled: 0
+    path: Assets/Scenes/Persist.unity
+    guid: 0da2778c80fa11c4eb2fc139eb0212dd
+  - enabled: 0
+    path: Assets/Scenes/Day2.unity
+    guid: 6c7a593cf560045f0b41e00c78c23549
+  - enabled: 0
+    path: Assets/Scenes/Day3.unity
+    guid: 104e10f7627cd4a18942bbf99c2e109e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
