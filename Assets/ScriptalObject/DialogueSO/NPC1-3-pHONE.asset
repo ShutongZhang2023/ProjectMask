@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC1-3-pHONE
+  m_EditorClassIdentifier: 
+  lines:
+  - content: Hello Madam, This is Officer Chen.
+    nextStageDialogue: {fileID: 0}
+  - content: "I am officially notifying you that your social security account is
+      linked to a major money laundering case. We\u2019re talking 200,000 RMB here..."
+    nextStageDialogue: {fileID: 0}
+  - content: If you want to prove your innocence, take your ID and get to the nearest
+      ATM. Immediately.
+    nextStageDialogue: {fileID: 0}

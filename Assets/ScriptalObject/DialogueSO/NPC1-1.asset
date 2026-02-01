@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29020009251aa0445ad3dffda532b76d, type: 3}
+  m_Name: NPC1-1
+  m_EditorClassIdentifier: 
+  lines:
+  - content: 'My health has been getting worse and worse. '
+    nextStageDialogue: {fileID: 0}
+  - content: 'I took medicines, but medicines don''t help. '
+    nextStageDialogue: {fileID: 11400000, guid: 61b1edefa1be73c4ca4f4ccbc0cc8e2b, type: 2}
+  - content: "And now, I\u2019m coming for you and your mysterious power.\r\n"
+    nextStageDialogue: {fileID: 0}
