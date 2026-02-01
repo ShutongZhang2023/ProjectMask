@@ -643,6 +643,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -8443568676414462571, guid: 25f58a9496a8ff7469a84bdfd2e045ef, type: 3}
+    - target: {fileID: 3591044266086777986, guid: 4bef6101e5e9b294881c5123fcd4e920, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4113991772590850865, guid: 55ddba06d9d13da45ad3556bc06225a0, type: 3}
     - target: {fileID: 5145012359004060173, guid: 4bef6101e5e9b294881c5123fcd4e920, type: 3}
       propertyPath: MoneyEarm
       value: 150
@@ -694,6 +698,10 @@ PrefabInstance:
     - target: {fileID: 5409749605851509012, guid: 4bef6101e5e9b294881c5123fcd4e920, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: -1.2082391
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536753278286799402, guid: 4bef6101e5e9b294881c5123fcd4e920, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -39,23 +39,6 @@ public class MaskWorldItem : MonoBehaviour
         if (presentationBackground != null) presentationBackground.SetActive(false);
     }
 
-    void Update()
-    {
-        // ... (保持之前的 Update 逻辑不变) ...
-        if (GameManager.Instance == null) return;
-        var data = GameManager.Instance.allMasks.Find(m => m.maskID == myMaskID);
-        if (data != null)
-        {
-            sr.enabled = data.isUnlocked;
-            var col = GetComponent<Collider2D>();
-            if (col) col.enabled = data.isUnlocked;
-
-            float healthPercent = (data.health + data.hunger) / 4f;
-            if (data.IsBroken) sr.color = Color.black;
-            else sr.color = Color.Lerp(Color.gray, Color.white, healthPercent);
-        }
-    }
-
     private void OnMouseDown()
     {
         if (isSelected) return;
