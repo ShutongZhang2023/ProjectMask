@@ -76,7 +76,7 @@ public class SceneManager : MonoBehaviour
     {
         if (curtainController == null || !curtainController.IsOpen)
         {
-            Debug.Log("���ӻ�û���������ܸ��ˡ�");
+            Debug.Log("no npc");
             return;
         }
 
@@ -116,12 +116,8 @@ public class SceneManager : MonoBehaviour
         // 在 SceneManager.cs 的 SwitchNPCRoutine 协程末尾
         else
         {
-            Debug.Log("没有下一个 NPC 了，准备结束这一天");
-            // 通知 GameManager 结束这一天
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.EndDay();
-            }
+            yield return new WaitForSeconds(2.0f);
+            GameManager.Instance.LoadNextLevel();
         }
     }
 

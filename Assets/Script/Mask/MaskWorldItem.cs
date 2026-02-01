@@ -39,29 +39,54 @@ public class MaskWorldItem : MonoBehaviour
         if (presentationBackground != null) presentationBackground.SetActive(false);
     }
 
-    void Update()
-    {
-        // ... (保持之前的 Update 逻辑不变) ...
-        if (GameManager.Instance == null) return;
-        var data = GameManager.Instance.allMasks.Find(m => m.maskID == myMaskID);
-        if (data != null)
-        {
-            sr.enabled = data.isUnlocked;
-            var col = GetComponent<Collider2D>();
-            if (col) col.enabled = data.isUnlocked;
-
-            float healthPercent = (data.health + data.hunger) / 4f;
-            if (data.IsBroken) sr.color = Color.black;
-            else sr.color = Color.Lerp(Color.gray, Color.white, healthPercent);
-        }
-    }
-
     private void OnMouseDown()
     {
         if (isSelected) return;
         if (SceneManager.instance != null && !SceneManager.instance.curtainController.IsOpen) return;
 
+        if (!CheckMaskUsability())
+        {
+            return; // 如果不可用，直接中断，不执行后面的 PlaySelectionAnimation
+        }
+
         PlaySelectionAnimation();
+    
+    
+    }
+
+    bool CheckMaskUsability()
+    {
+        if (GameManager.Instance == null) return true; // 防御性编程
+
+        // 1. 获取数据
+        var data = GameManager.Instance.allMasks.Find(m => m.maskID == myMaskID);
+        if (data == null) return true;
+
+        // 2. 检查条件：如果血量<=0 或者 饥饿<=0 (没饭吃)
+        if (data.health <= 0 || data.hunger <= 0)
+        {
+            PlayRejectAnimation(); // 播放"不能用"的动画
+            return false; // 返回不可用
+        }
+
+        return true; // 可用
+    }
+
+    void PlayRejectAnimation()
+    {
+        transform.DOKill();
+
+        transform.position = originalPos;
+
+        transform.DOShakePosition(0.3f, 0.3f, 20, 90, false, true)
+            .OnComplete(() => transform.position = originalPos);
+
+        if (sr != null)
+        {
+            sr.DOColor(Color.red, 0.15f).SetLoops(2, LoopType.Yoyo);
+        }
+
+        Debug.Log($"面具 {myMaskID} 状态不佳 (Health/Hunger为0)，无法使用！");
     }
 
     void PlaySelectionAnimation()
